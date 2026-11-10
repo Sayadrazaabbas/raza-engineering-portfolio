@@ -20,4 +20,13 @@ document.querySelectorAll('.project details').forEach(detail => {
   });
 });
 
+const featuredIds = ['navy-target-ship','induction','forced-air-warmer','idemi-mcb','barc-gamma','ph-touch','barc-power-supply','barc-cooler'];
+cards.forEach((card,index) => {
+  const link = document.createElement('a');
+  link.className = 'deep-link';
+  link.href = `project.html?id=${featuredIds[index]}`;
+  link.textContent = 'Full case study →';
+  card.querySelector('.project-body').append(link);
+});
+
 document.getElementById('year').textContent = new Date().getFullYear();

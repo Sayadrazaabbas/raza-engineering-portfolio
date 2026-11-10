@@ -1,10 +1,10 @@
 # Raza Abbas Sayed — engineering portfolio
 
-First website draft, built from the case studies in `F:\profile info`. Open `dist/index.html` locally to review it. The deployed Site is private while content and permissions are reviewed.
+Detailed portfolio draft, built from the case studies in `F:\profile info` and later owner clarifications. Open `dist/index.html` locally to review it. `dist/projects.html` lists 34 curated projects and `dist/project.html?id=...` provides a dedicated case-study view. Run `node scripts/validate.mjs` to check records and links. The deployed Site is private while content and permissions are reviewed.
 
 ## Editorial rules
 
-- The eight featured stories use the user's descriptions and local case studies. Illustrations are abstract CSS graphics, **not** photographs of actual equipment.
+- The eight home-page stories and the complete case-study library use the user's descriptions and local case-study records. Illustrations are abstract CSS graphics, **not** photographs of actual equipment.
 - Do not add client logos, actual defence/BARC drawings, source code, identifiable patient images, measured performance, certifications, or production claims without confirming publication rights and evidence.
 - The Navy story is public-facing at a high level only; no packet formats, identifiers, frequencies, or operational procedures.
 - The gamma project is a mechanical/motion concept, not a radiation-tested detector.
