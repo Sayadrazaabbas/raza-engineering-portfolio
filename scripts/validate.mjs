@@ -15,7 +15,7 @@ const homeScript = fs.readFileSync(path.join(root,'script.js'),'utf8');
 const match = homeScript.match(/const featuredIds = \[([^\]]+)\]/);
 if (!match) problems.push('Featured project IDs missing');
 else for (const [,id] of match[1].matchAll(/'([^']+)'/g)) if (!ids.has(id)) problems.push(`Unknown featured ID: ${id}`);
-for (const page of ['index.html','projects.html','project.html']) {
+for (const page of ['index.html','projects.html','project.html','research.html']) {
   const html = fs.readFileSync(path.join(root,page),'utf8');
   for (const [,url] of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
     if (url.startsWith('http') || url.startsWith('#')) continue;
