@@ -1,0 +1,10 @@
+{
+  "name": "raza-engineering-portfolio",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Static engineering portfolio for local preview and Cloudflare Pages",
+  "scripts": {
+    "preview": "node scripts/serve.mjs",
+    "validate": "node scripts/validate.mjs"
+  }
+}
