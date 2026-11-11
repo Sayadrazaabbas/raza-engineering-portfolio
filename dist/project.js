@@ -21,4 +21,24 @@ if (!project) {
   const evidence = evidenceFor(project);
   document.getElementById('case-evidence-title').textContent=evidence.title;
   document.getElementById('case-evidence-detail').textContent=evidence.detail;
+  const media = (window.PORTFOLIO_MEDIA || {})[project.id];
+  if (media?.images?.length) {
+    const section = document.getElementById('case-media');
+    const gallery = document.getElementById('case-gallery');
+    section.hidden = false;
+    document.getElementById('case-media-note').textContent = media.videoNote || 'Selected original project photographs, prepared as optimized web copies.';
+    media.images.forEach((source, index) => {
+      const link = document.createElement('a');
+      link.href = source;
+      link.className = 'gallery-item';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      const image = document.createElement('img');
+      image.src = source;
+      image.alt = `${project.title} — project image ${index + 1}`;
+      image.loading = 'lazy';
+      link.append(image);
+      gallery.append(link);
+    });
+  }
 }
