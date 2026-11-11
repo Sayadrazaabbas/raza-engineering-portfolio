@@ -6,6 +6,7 @@
   "description": "Static engineering portfolio for local preview and Cloudflare Pages",
   "scripts": {
     "preview": "node scripts/serve.mjs",
+    "preview:cloudflare": "npx wrangler pages dev dist --port 8788",
     "validate": "node scripts/validate.mjs",
     "check:deploy": "node scripts/validate.mjs && node scripts/check-deploy.mjs && node scripts/test-media-function.mjs"
   }

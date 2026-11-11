@@ -1,8 +1,10 @@
 # Raza Abbas Sayed — engineering portfolio
 
-Detailed portfolio draft, built from the case studies in `F:\profile info` and later owner clarifications. Open `dist/index.html` locally to review it. `dist/projects.html` lists 34 curated projects, `dist/project.html?id=...` provides a dedicated case-study view, and `dist/research.html` is a focused BARC/research-oriented introduction. Run `node scripts/validate.mjs` to check records and links. The deployed Site is private while content and permissions are reviewed.
+Detailed portfolio draft, built from the case studies in `F:\profile info` and later owner clarifications. This is a standalone static website: `dist/` is the complete deployable production site and does not depend on a ChatGPT Site or an OpenAI login for visitors. `dist/projects.html` is the Work Archive, `dist/project.html?id=...` provides a dedicated case-study view, and `dist/research.html` is a focused BARC/research-oriented introduction. Run `node scripts/validate.mjs` to check records and links. The deployed site remains private while content and permissions are reviewed.
 
 For local preview and the gated Cloudflare Pages/R2 deployment flow, follow [`cloudflare/DEPLOY.md`](cloudflare/DEPLOY.md). Run `npm run check:deploy` before preview or deployment. GitHub pushes validate automatically; production deployment is manual and must wait for Cloudflare Access protection.
+
+Use `npm run preview` for a lightweight local preview at `http://127.0.0.1:4173/`. For a production-style local Cloudflare Pages preview, including the `/media/*` Function, run `npm run preview:cloudflare` and open `http://localhost:8788/`. After Cloudflare Pages and Access are configured, deploy from GitHub Actions or run `./scripts/deploy-cloudflare.ps1 -ProjectName 'your-pages-project-name' -AccessConfirmed`.
 
 ## Editorial rules
 

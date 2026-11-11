@@ -20,7 +20,7 @@ npm run check:deploy
 npm run preview
 ```
 
-Open `http://127.0.0.1:4173/`. Press Ctrl+C to stop the preview. `check:deploy` validates project data, local links, Pages asset sizes, excluded file types, and the media Function's syntax. It does not certify publication rights or verify the content of every photo/video.
+Open `http://127.0.0.1:4173/` for the static site preview. For a production-style Cloudflare Pages preview—including the `/media/*` Function—run `npm run preview:cloudflare` and open `http://localhost:8788`. Press Ctrl+C to stop either server. `check:deploy` validates project data, local links, Pages asset sizes, excluded file types, and the media Function's syntax. It does not certify publication rights or verify the content of every photo/video.
 
 ## 2. Create Pages without exposing the portfolio
 
