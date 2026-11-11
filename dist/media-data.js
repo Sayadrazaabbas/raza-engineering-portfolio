@@ -17,7 +17,7 @@
   window.PORTFOLIO_MEDIA = {
     'navy-target-ship': { images: images('indian-navy-target-ship', 24), videos: videos('indian-navy-target-ship', 6), videoNote: 'Complete project evidence archive: 24 photos and 6 full-length field videos.' },
     'navy-eot': { images: images('navy-engine-order-telegraph', 1) },
-    'navigation-light-panel': { images: images('navigation-light-panel-navy-and-merchant', 8) },
+    'navigation-light-panel': { images: images('navigation-light-panel-navy-and-merchant', 8), videos: videos('other-marine-video-review', 2), videoNote: 'Complete marine evidence archive: 8 photos and 2 full-length project videos.' },
     'sagar-samra': { images: images('sagar-samrat-offshore-6-6kv', 21) },
     'barc-custom-pcbs': { images: barc },
     'barc-power-supply': { images: barc },
@@ -31,7 +31,6 @@
     'denki-antifouling': { images: images('denki-antifouling-power-supply', 2) },
     'denki-igbt': { images: ozone },
     'ozone': { images: ozone },
-    'crest-tlc': { images: images('tlc-instrument', 1) },
-    'marine-evidence': { images: images('navigation-light-panel-navy-and-merchant', 8), videos: videos('other-marine-video-review', 2), videoNote: 'Complete auxiliary marine evidence archive: 8 photos and 2 full-length videos.' }
+    'crest-tlc': { images: images('tlc-instrument', 1) }
   };
 })();
