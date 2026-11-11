@@ -27,6 +27,15 @@ if (!project) {
     const gallery = document.getElementById('case-gallery');
     section.hidden = false;
     document.getElementById('case-media-note').textContent = media.videoNote || 'Selected original project photographs, prepared as optimized web copies.';
+    if (media.video) {
+      const video = document.createElement('video');
+      video.className = 'gallery-video';
+      video.src = media.video;
+      video.controls = true;
+      video.preload = 'metadata';
+      video.setAttribute('aria-label', `${project.title} video highlight`);
+      gallery.append(video);
+    }
     media.images.forEach((source, index) => {
       const link = document.createElement('a');
       link.href = source;
