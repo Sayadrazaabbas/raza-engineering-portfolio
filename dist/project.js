@@ -18,6 +18,15 @@ if (!project) {
   document.title=`${project.title} — Raza Abbas Sayed`;
   const fields={group:project.group,title:project.title,lead:project.lead,context:project.context,period:project.period,status:project.status,challenge:project.challenge,contribution:project.contribution,system:project.system,outcome:project.outcome,note:project.note};
   Object.entries(fields).forEach(([key,value])=>{document.getElementById(`case-${key}`).textContent=value;});
+  if (project.liveUrl) {
+    const liveLink = document.createElement('a');
+    liveLink.className = 'live-site-link';
+    liveLink.target = '_blank';
+    liveLink.rel = 'noopener noreferrer';
+    liveLink.innerHTML = 'Visit live website <span aria-hidden="true">↗</span>';
+    liveLink.href = project.liveUrl;
+    document.querySelector('.case-hero').append(liveLink);
+  }
   const evidence = evidenceFor(project);
   document.getElementById('case-evidence-title').textContent=evidence.title;
   document.getElementById('case-evidence-detail').textContent=evidence.detail;

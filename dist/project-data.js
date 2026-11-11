@@ -332,6 +332,7 @@ window.PORTFOLIO_PROJECTS = [
     contribution:'I developed the website frontend and iterated its visual presentation and deployment package. The source archive includes HTML, CSS, JavaScript, media, Vite and a Three.js dependency; content and branding responsibilities should be confirmed separately.',
     system:'A responsive, media-rich frontend organizes the company story and directs visitors toward its service and contact sections.',
     outcome:'The website is publicly reachable at cbgipl.com. Traffic or business results have not been verified.',
+    liveUrl:'https://www.cbgipl.com/',
     note:'Confirm client approval before publishing internal assets, source files, brand materials or screenshots.'
   },
   {
@@ -341,7 +342,18 @@ window.PORTFOLIO_PROJECTS = [
     contribution:'I report developing the client website. The located project folder contains media and reference material but not enough source to distinguish full design, WordPress implementation, revision work or deployment.',
     system:'The public website presents company identity, services, associated businesses and contact paths. Its implementation stack has not been established from the located archive.',
     outcome:'The public website is reachable; my exact deliverables and project dates need confirmation.',
+    liveUrl:'https://cbgholding.com/',
     note:'Do not infer the live stack solely from an Elementor archive or claim sole authorship until the project scope is verified.'
+  },
+  {
+    id:'curohardtech-site', title:'Curohard Technologies / Bharat Robotics LAB website', group:'Software & web', period:'Date to confirm', context:'Freelance client website · curohardtech.com', status:'Live website link supplied by owner',
+    lead:'A public-facing education-technology website for robotics, AI, coding and school laboratory programs.',
+    challenge:'The site needs to make a broad set of educational technology offerings understandable and guide schools toward booking a demonstration.',
+    contribution:'I report contributing to the website delivery. The exact responsibility across design, frontend, CMS implementation, content and deployment should be confirmed before making more specific authorship claims.',
+    system:'The public site presents STEM, robotics, coding, AI, AR/VR and school-lab offerings, with program, gallery, FAQ and demo-contact paths.',
+    outcome:'The website is publicly reachable at curohardtech.com. Traffic and conversion results have not been verified.',
+    liveUrl:'https://www.curohardtech.com/',
+    note:'Use only client-approved screenshots and do not publish administrative access, source repositories or private student/customer data.'
   },
   {
     id:'ownics-labs-site', title:'Ownics Labs website', group:'Software & web', period:'Date to confirm', context:'Personal web project · domain to verify', status:'Owner-reported; source and URL to confirm',
