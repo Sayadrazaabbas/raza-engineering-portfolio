@@ -13,8 +13,9 @@ function walk(directory) {
     count++;
     const relative = path.relative(root, fullPath).replaceAll('\\', '/');
     const bytes = fs.statSync(fullPath).size;
-    if (bytes > maxBytes) problems.push(`${relative}: exceeds Cloudflare Pages 25 MiB asset limit`);
-    if (/\.(mp4|mov|avi|mkv)$/i.test(item.name)) problems.push(`${relative}: video belongs in private R2, not Pages`);
+    if (bytes > maxBytes) problems.push(`${relative}: exceeds the 25 MiB web-asset limit`);
+    if (/\.(mov|avi|mkv)$/i.test(item.name)) problems.push(`${relative}: use an optimized MP4, not a raw video format`);
+    if (/\.mp4$/i.test(item.name) && !relative.startsWith('assets/videos/')) problems.push(`${relative}: portfolio MP4 files must stay in assets/videos/`);
     if (/\.(sch|brd|eagle|ino|hex|bin|zip|pdf)$/i.test(item.name)) problems.push(`${relative}: engineering source/archive is not approved for Pages`);
   }
 }
