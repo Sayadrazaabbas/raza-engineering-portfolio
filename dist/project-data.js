@@ -306,5 +306,50 @@ window.PORTFOLIO_PROJECTS = [
     system:'The sensor feeds the controller; firmware compares the measured value with its threshold and commands a relay. The power stage supplies the required low-voltage rail.',
     outcome:'The owner reports the product working in the market and sold in hundreds of units. It is intentionally a concise commercial-result story because the technical circuit is straightforward.',
     note:'Do not infer certified fire-alarm or life-safety performance from the archive folder name. Confirm the actual sensed gas and application.'
+  },
+  {
+    id:'logger-dashboard', title:'Hardware-connected data-logger dashboard', group:'Software & web', period:'Date to confirm', context:'Freelance telemetry · Glacier archive', status:'Dashboard source documented; deployment to confirm',
+    lead:'A browser dashboard connecting sensor readings to live charts, history and a readable data table.',
+    challenge:'Field measurements had to become useful to operators without requiring direct access to device logs or hardware.',
+    contribution:'I developed a web dashboard and connected logger data to its browser presentation. The source shows chart and history views for water flow, water temperature, ambient temperature and humidity; the exact gateway and backend ownership still need confirmation.',
+    system:'Logger readings pass through a cloud data path into a browser interface. The located prototype reads Firebase Realtime Database and renders time-series data with Chart.js. Its relationship to the industrial RS485 logger is not yet established.',
+    outcome:'A working dashboard codebase is present. Client, deployment date, update rate and production status remain to be confirmed.',
+    note:'Never publish raw source or embedded cloud credentials. Use redacted charts and a confirmed architecture diagram.'
+  },
+  {
+    id:'industrial-iot-software', title:'Industrial IoT dashboard and control software', group:'Software & web', period:'2025 archive', context:'AICAN · industrial IoT', status:'Codebase present; personal scope to confirm',
+    lead:'The software layer connecting industrial data and control-unit functions to browser-based monitoring.',
+    challenge:'Operators need to see equipment data and trends in context and interact with authorized controls through a usable interface.',
+    contribution:'I worked on dashboard development and connecting hardware data to backend and live charts. The exact screens, API modules and deployed control features I authored are being documented with the owner.',
+    system:'The archive contains React/Vite frontend applications and a Node/Express backend, with charting, MQTT and Socket.IO paths. This is evidence of the application architecture, not proof that every module was written by one person.',
+    outcome:'Software sources are present; the final client deployment and my specific module ownership still need confirmation.',
+    note:'Do not publish network endpoints, credentials or customer data. Avoid claiming sole authorship from a shared repository.'
+  },
+  {
+    id:'cbgipl-site', title:'CBGIPL corporate website', group:'Software & web', period:'2026', context:'Freelance client website · cbgipl.com', status:'Public website and source revisions found',
+    lead:'An interactive corporate website presenting real estate, infrastructure and global-trade activities in one coherent experience.',
+    challenge:'The client needed a clear public introduction across several business lines, with navigable services, leadership, roadmap and contact information.',
+    contribution:'I developed the website frontend and iterated its visual presentation and deployment package. The source archive includes HTML, CSS, JavaScript, media, Vite and a Three.js dependency; content and branding responsibilities should be confirmed separately.',
+    system:'A responsive, media-rich frontend organizes the company story and directs visitors toward its service and contact sections.',
+    outcome:'The website is publicly reachable at cbgipl.com. Traffic or business results have not been verified.',
+    note:'Confirm client approval before publishing internal assets, source files, brand materials or screenshots.'
+  },
+  {
+    id:'cbg-holding-site', title:'CBG Holding corporate website', group:'Software & web', period:'Date to confirm', context:'Freelance client website · cbgholding.com', status:'Owner-reported work; exact role to confirm',
+    lead:'Public-facing website work for a multinational holding company spanning EPC, energy, real estate and trade.',
+    challenge:'The company needed its diverse activities and associated entities presented clearly to a broad audience.',
+    contribution:'I report developing the client website. The located project folder contains media and reference material but not enough source to distinguish full design, WordPress implementation, revision work or deployment.',
+    system:'The public website presents company identity, services, associated businesses and contact paths. Its implementation stack has not been established from the located archive.',
+    outcome:'The public website is reachable; my exact deliverables and project dates need confirmation.',
+    note:'Do not infer the live stack solely from an Elementor archive or claim sole authorship until the project scope is verified.'
+  },
+  {
+    id:'ownics-labs-site', title:'Ownics Labs website', group:'Software & web', period:'Date to confirm', context:'Personal web project · domain to verify', status:'Owner-reported; source and URL to confirm',
+    lead:'A self-directed website project that belongs in the web-development side of my portfolio.',
+    challenge:'The project is an opportunity to demonstrate independent web presentation and delivery, but its purpose and feature set have not yet been documented.',
+    contribution:'I report developing my own Ownics Labs website. The specific stack, pages, interaction design and deployment work still require the correct source folder and working URL.',
+    system:'The site architecture and hosting are intentionally left undescribed until the source is identified.',
+    outcome:'Owner-reported website work; public availability has not been verified.',
+    note:'The supplied ownicslabs.in URL was not reachable during review. Do not link to a similarly named third-party site.'
   }
 ];
