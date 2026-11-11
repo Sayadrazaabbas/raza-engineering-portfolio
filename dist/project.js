@@ -22,20 +22,21 @@ if (!project) {
   document.getElementById('case-evidence-title').textContent=evidence.title;
   document.getElementById('case-evidence-detail').textContent=evidence.detail;
   const media = (window.PORTFOLIO_MEDIA || {})[project.id];
-  if (media?.images?.length) {
+  if (media?.images?.length || media?.videos?.length || media?.video) {
     const section = document.getElementById('case-media');
     const gallery = document.getElementById('case-gallery');
     section.hidden = false;
     document.getElementById('case-media-note').textContent = media.videoNote || 'Selected original project photographs, prepared as optimized web copies.';
-    if (media.video) {
+    const allVideos = media.videos || (media.video ? [media.video] : []);
+    allVideos.forEach((source, index) => {
       const video = document.createElement('video');
       video.className = 'gallery-video';
-      video.src = media.video;
+      video.src = source;
       video.controls = true;
       video.preload = 'metadata';
-      video.setAttribute('aria-label', `${project.title} video highlight`);
+      video.setAttribute('aria-label', `${project.title} project video ${index + 1}`);
       gallery.append(video);
-    }
+    });
     media.images.forEach((source, index) => {
       const link = document.createElement('a');
       link.href = source;
