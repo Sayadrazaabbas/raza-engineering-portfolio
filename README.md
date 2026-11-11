@@ -2,7 +2,7 @@
 
 Detailed portfolio draft, built from the case studies in `F:\profile info` and later owner clarifications. Open `dist/index.html` locally to review it. `dist/projects.html` lists 34 curated projects, `dist/project.html?id=...` provides a dedicated case-study view, and `dist/research.html` is a focused BARC/research-oriented introduction. Run `node scripts/validate.mjs` to check records and links. The deployed Site is private while content and permissions are reviewed.
 
-For local preview and deployment to your own Cloudflare Pages account, follow [`cloudflare/DEPLOY.md`](cloudflare/DEPLOY.md). The static site can be previewed with `npm run preview` and deployed from `dist` after review.
+For local preview and the gated Cloudflare Pages/R2 deployment flow, follow [`cloudflare/DEPLOY.md`](cloudflare/DEPLOY.md). Run `npm run check:deploy` before preview or deployment. GitHub pushes validate automatically; production deployment is manual and must wait for Cloudflare Access protection.
 
 ## Editorial rules
 

@@ -1,8 +1,12 @@
 param(
   [Parameter(Mandatory = $true)][string]$ProjectName,
-  [string]$Branch = 'main'
+  [string]$Branch = 'main',
+  [switch]$AccessConfirmed
 )
 
+if (-not $AccessConfirmed) {
+  throw 'Deployment stopped: first protect and verify production and preview Pages URLs with Cloudflare Access, then pass -AccessConfirmed.'
+}
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $distPath = Join-Path $repoRoot 'dist'
 if (-not (Test-Path -LiteralPath (Join-Path $distPath 'index.html'))) {
@@ -10,7 +14,7 @@ if (-not (Test-Path -LiteralPath (Join-Path $distPath 'index.html'))) {
 }
 Push-Location -LiteralPath $repoRoot
 try {
-  npm run validate
+  npm run check:deploy
   if ($LASTEXITCODE -ne 0) { throw 'Portfolio validation failed; deployment stopped.' }
   npx wrangler pages deploy dist --project-name $ProjectName --branch $Branch
   if ($LASTEXITCODE -ne 0) { throw 'Cloudflare Pages deployment failed.' }
