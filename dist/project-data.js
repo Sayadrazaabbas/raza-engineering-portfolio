@@ -355,13 +355,4 @@ window.PORTFOLIO_PROJECTS = [
     liveUrl:'https://www.curohardtech.com/',
     note:'Use only client-approved screenshots and do not publish administrative access, source repositories or private student/customer data.'
   },
-  {
-    id:'ownics-labs-site', title:'Ownics Labs website', group:'Software & web', period:'Date to confirm', context:'Personal web project · domain to verify', status:'Owner-reported; source and URL to confirm',
-    lead:'A self-directed website project that belongs in the web-development side of my portfolio.',
-    challenge:'The project is an opportunity to demonstrate independent web presentation and delivery, but its purpose and feature set have not yet been documented.',
-    contribution:'I report developing my own Ownics Labs website. The specific stack, pages, interaction design and deployment work still require the correct source folder and working URL.',
-    system:'The site architecture and hosting are intentionally left undescribed until the source is identified.',
-    outcome:'Owner-reported website work; public availability has not been verified.',
-    note:'The supplied ownicslabs.in URL was not reachable during review. Do not link to a similarly named third-party site.'
-  }
 ];
