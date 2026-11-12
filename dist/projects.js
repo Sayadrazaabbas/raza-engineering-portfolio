@@ -17,18 +17,35 @@ function evidenceFor(project) {
   return {key:'review', label:'EVIDENCE REVIEW', detail:'Supporting material needs selection or approval'};
 }
 
+function coverFor(project) {
+  const actual = (window.PORTFOLIO_MEDIA || {})[project.id]?.images?.[0];
+  if (actual) return {source: actual, type: 'Project photograph'};
+  if (project.id === 'induction' || project.group === 'Power & industrial') return {source: 'assets/induction-controller-concept.jpg', type: 'Illustrative engineering visual'};
+  if (project.id === 'forced-air-warmer') return {source: 'assets/forced-air-warmer-concept.jpg', type: 'Illustrative engineering visual'};
+  if (project.id === 'ph-touch' || project.id === 'ph-desktop' || project.group === 'Medical & laboratory') return {source: 'assets/ph-meter-concept.jpg', type: 'Illustrative engineering visual'};
+  if (project.id === 'barc-cooler') return {source: 'assets/industrial-cooler-control-concept.jpg', type: 'Illustrative engineering visual'};
+  if (project.group === 'Software & web') return {source: 'assets/software-dashboard-concept.jpg', type: 'Illustrative software visual'};
+  if (project.group === 'Marine & defence') return {source: 'assets/projects/indian-navy-target-ship-01.jpg', type: 'Related project photograph'};
+  return {source: 'assets/projects/barc-power-supply-filter-and-gamma-01.jpg', type: 'Related project photograph'};
+}
+
 function render() {
   const term = search.value.trim().toLocaleLowerCase();
   const matching = projects.filter(p => (activeGroup === 'all' || p.group === activeGroup) && (activeEvidence === 'all' || evidenceFor(p).key === activeEvidence) && [p.title,p.group,p.context,p.lead,p.challenge,p.contribution].join(' ').toLocaleLowerCase().includes(term));
   list.replaceChildren(...matching.map((p,index) => {
     const card = document.createElement('a'); card.className='library-card'; card.href=`project.html?id=${encodeURIComponent(p.id)}`;
     const top = document.createElement('div'); top.className='library-card-top'; top.textContent=`${String(index+1).padStart(2,'0')} / ${p.group.toUpperCase()}`;
+    const cover = coverFor(p);
+    const visual = document.createElement('div'); visual.className='library-card-visual';
+    const image = document.createElement('img'); image.src=cover.source; image.alt=`${p.title} — ${cover.type.toLowerCase()}`; image.loading='lazy';
+    const visualType = document.createElement('span'); visualType.textContent=cover.type;
+    visual.append(image,visualType);
     const title = document.createElement('h2'); title.textContent=p.title;
     const summary = document.createElement('p'); summary.textContent=p.lead;
     const evidence = evidenceFor(p);
     const proof = document.createElement('div'); proof.className=`evidence-badge ${evidence.key}`; proof.innerHTML=`<strong>${evidence.label}</strong><span>${evidence.detail}</span>`;
     const bottom = document.createElement('div'); bottom.className='library-card-bottom'; bottom.textContent=`${p.period} · ${p.status}  ↗`;
-    card.append(top,title,summary,proof,bottom); return card;
+    card.append(top,visual,title,summary,proof,bottom); return card;
   }));
   resultCount.textContent = `${matching.length} work record${matching.length===1?'':'s'} shown`;
   if (!matching.length) { const empty=document.createElement('p');empty.className='empty-state';empty.textContent='No matching projects. Try another term or domain.';list.append(empty); }
