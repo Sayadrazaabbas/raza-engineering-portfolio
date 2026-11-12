@@ -43,6 +43,8 @@ if (!project) {
       video.src = source;
       video.controls = true;
       video.preload = 'metadata';
+      video.muted = true;
+      video.defaultMuted = true;
       video.setAttribute('aria-label', `${project.title} project video ${index + 1}`);
       gallery.append(video);
     });
