@@ -31,7 +31,7 @@ if (!project) {
   document.getElementById('case-evidence-title').textContent=evidence.title;
   document.getElementById('case-evidence-detail').textContent=evidence.detail;
   const media = (window.PORTFOLIO_MEDIA || {})[project.id];
-  if (media?.images?.length || media?.videos?.length || media?.video) {
+  if (media?.images?.length || media?.technical?.length || media?.videos?.length || media?.video) {
     const section = document.getElementById('case-media');
     const gallery = document.getElementById('case-gallery');
     section.hidden = false;
@@ -46,7 +46,11 @@ if (!project) {
       video.setAttribute('aria-label', `${project.title} project video ${index + 1}`);
       gallery.append(video);
     });
-    media.images.forEach((source, index) => {
+    const galleryImages = [
+      ...(media.images || []).map(source => ({source, type: 'Project photograph'})),
+      ...(media.technical || []).map(source => ({source, type: 'Schematic / PCB evidence'}))
+    ];
+    galleryImages.forEach(({source, type}, index) => {
       const link = document.createElement('a');
       link.href = source;
       link.className = 'gallery-item';
@@ -54,9 +58,12 @@ if (!project) {
       link.rel = 'noopener noreferrer';
       const image = document.createElement('img');
       image.src = source;
-      image.alt = `${project.title} — project image ${index + 1}`;
+      image.alt = `${project.title} — ${type.toLowerCase()} ${index + 1}`;
       image.loading = 'lazy';
-      link.append(image);
+      const label = document.createElement('span');
+      label.className = 'gallery-evidence-label';
+      label.textContent = type;
+      link.append(image, label);
       gallery.append(link);
     });
   }

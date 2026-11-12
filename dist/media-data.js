@@ -19,7 +19,7 @@
     'navy-eot': { images: images('navy-engine-order-telegraph', 1) },
     'navigation-light-panel': { images: images('navigation-light-panel-navy-and-merchant', 8), videos: videos('other-marine-video-review', 2), videoNote: 'Complete marine evidence archive: 8 photos and 2 full-length project videos.' },
     'sagar-samra': { images: images('sagar-samrat-offshore-6-6kv', 21) },
-    'barc-custom-pcbs': { images: barc },
+    'barc-custom-pcbs': { images: barc, technical: ['assets/technical/barc-pcb-top.jpg'] },
     'barc-power-supply': { images: barc },
     'barc-gamma': { images: barc },
     'barc-filter': { images: barc },
@@ -31,6 +31,7 @@
     'denki-antifouling': { images: images('denki-antifouling-power-supply', 2) },
     'denki-igbt': { images: ozone },
     'ozone': { images: ozone },
-    'crest-tlc': { images: images('tlc-instrument', 1) }
+    'crest-tlc': { images: images('tlc-instrument', 1) },
+    'ph-touch': { technical: ['assets/technical/ph-touch-amplifier-schematic.jpg', 'assets/technical/ph-touch-main-schematic.jpg'], videoNote: 'Technical evidence: exported signal-conditioning and main-board schematics.' }
   };
 })();
