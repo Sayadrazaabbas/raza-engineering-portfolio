@@ -38,6 +38,8 @@ if (!project) {
     document.getElementById('case-media-note').textContent = media.videoNote || 'Selected original project photographs, prepared as optimized web copies.';
     const allVideos = media.videos || (media.video ? [media.video] : []);
     allVideos.forEach((source, index) => {
+      const videoWrap = document.createElement('div');
+      videoWrap.className = 'gallery-video-wrap';
       const video = document.createElement('video');
       video.className = 'gallery-video';
       video.src = source;
@@ -46,7 +48,19 @@ if (!project) {
       video.muted = true;
       video.defaultMuted = true;
       video.setAttribute('aria-label', `${project.title} project video ${index + 1}`);
-      gallery.append(video);
+      const audioToggle = document.createElement('button');
+      audioToggle.type = 'button';
+      audioToggle.className = 'video-audio-toggle';
+      audioToggle.textContent = 'Unmute video';
+      audioToggle.setAttribute('aria-label', `Unmute ${project.title} video ${index + 1}`);
+      audioToggle.addEventListener('click', () => {
+        video.muted = !video.muted;
+        const muted = video.muted;
+        audioToggle.textContent = muted ? 'Unmute video' : 'Mute video';
+        audioToggle.setAttribute('aria-label', `${muted ? 'Unmute' : 'Mute'} ${project.title} video ${index + 1}`);
+      });
+      videoWrap.append(video, audioToggle);
+      gallery.append(videoWrap);
     });
     const galleryImages = [
       ...(media.images || []).map(source => ({source, type: 'Project photograph'})),
